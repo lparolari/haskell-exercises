@@ -1,3 +1,7 @@
+module Validate where 
+
+-- credit card validation
+
 toDigits :: Integer -> [Integer]
 toDigits 0 = []
 toDigits x = toDigits (x `div` 10) ++ [x `mod` 10]
