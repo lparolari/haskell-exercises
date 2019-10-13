@@ -1,6 +1,13 @@
+module Validate where 
+
+-- credit card validation
+
 toDigits :: Integer -> [Integer]
-toDigits 0 = []
-toDigits x = toDigits (x `div` 10) ++ [x `mod` 10]
+toDigits x | x <= 0 = []
+           | otherwise = toDigits (x `div` 10) ++ [x `mod` 10]
+
+toDigitsRev :: Integer -> [Integer]
+toDigitsRev x = reverse (toDigits x)
 
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther x = reverse (doubleEveryOtherInternal (reverse x) False)
