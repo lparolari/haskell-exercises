@@ -46,10 +46,10 @@ module Relabel where
     mlabel :: Tree a -> ST (Tree Int)
 
     mlabel (Leaf x) = do
-    n <- fresh
-    return $ Leaf n
+        n <- fresh
+        return $ Leaf n
 
     mlabel (Node l r) = do
-    l' <- mlabel l
-    r' <- mlabel r
-    return $ Node l' r'
+        l' <- mlabel l
+        r' <- mlabel r
+        return $ Node l' r'
