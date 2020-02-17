@@ -22,4 +22,5 @@ module Expr where
     
     main = do
         putStrLn (show (fmap (\x -> 7) (Add (Var 'x') (Val 1))))
-        putStrLn (show (pure (\x -> 7) <*> (Add (Var 'x') (Val 1)))):t 
+        putStrLn (show (pure (\x -> 7) <*> (Add (Var 'x') (Val 1))))
+        putStrLn (show ((Var 'x') >>= (\x -> pure 7)))
